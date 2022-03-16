@@ -52,9 +52,32 @@ resetButton.addEventListener('click', init)
 
 /*----- functions -----*/
 //intialize start game
-//init()
-
+function init() {
+    console.log('init function called')
+    board = new Array(9).fill(null) //[null,null,null....]x9
+    turn = 1; //X goes first
+    winner = null; //inital winner is no-one 
+}
+//startgame on page load
+init();
 //handle user interaction (logic for what happens when user interacts)
-//handleMove()
+function handleMove(event){
+    console.log(`${event.target.dataset.square} was clicked`)
+    const squareNumber = parseInt(event.target.dataset.square);
+    //set the index in the board array so we know that spot has been claimed
+    board[squareNumber] = turn;
+    //switched the turn
+    turn *= -1;
+    //check for winner
+    winner = checkForWinner()
+    //render message to user
+    render()
+}
 //check for 3 in a row -or winner(main game logic)
+function checkForWinner(){
+    console.log('checkfor winner function called')
+}
 //render messages to the dom
+function render(){
+    console.log('render function called')
+}
