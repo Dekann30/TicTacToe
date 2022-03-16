@@ -35,16 +35,26 @@ let winner; //can be 3 things: x/o, tie, null(ongoing)
 
 /*----- cached element references -----*///- things referenced constantly
 //game squares
+const domSquares = document.querySelectorAll('.square') //returns an array
 //message container - h1
+const domMessage = document.querySelector('h2');
 //reset button
+const resetButton = document.querySelector('button')
+//game board
+const gameBoard = document.querySelector('.game-board');
 
 /*----- event listeners -----*/
 //mouse click on 9 squares
+gameBoard.addEventListener('click', handleMove ) //game squares -thisis an example of delegating
 //mouse click on reset button
+resetButton.addEventListener('click', init)
 //optional - user initiates game start
 
 /*----- functions -----*/
 //intialize start game
+//init()
+
 //handle user interaction (logic for what happens when user interacts)
+//handleMove()
 //check for 3 in a row -or winner(main game logic)
 //render messages to the dom
